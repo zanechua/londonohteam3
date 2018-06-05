@@ -1,0 +1,25 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "ratings",
+      "type": "cosmosDB",
+      "direction": "in",
+      "databaseName": "icecream",
+      "collectionName": "ratings",
+      "sqlQuery": "SELECT * from c where c.userId = {userId}",
+      "connectionStringSetting": "CosmosDBConnection"
+    }
+  ]
+}
